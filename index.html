@@ -12,28 +12,31 @@
     }
 
     body {
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       text-align: center;
       color: white;
-      font-family: sans-serif;
+      font-family: 'Poppins', sans-serif;
       background-image: url('https://i.imgur.com/L0aBDz1.jpeg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       padding: 20px;
-      flex-direction: column;
+      position: relative;
+      z-index: 1;
     }
 
     body::before {
       content: "";
       position: fixed;
-      top: 0; left: 0;
-      width: 100%;
+      top: 0;
+      left: 0;
       height: 100%;
-      background: rgba(0, 0, 0, 0.5); /* dark overlay for readability */
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
       z-index: -1;
     }
 
@@ -41,19 +44,27 @@
       width: 100%;
       max-width: 850px;
       margin: 0 auto;
+      padding-top: 30px;
     }
 
-    h1, h2, p {
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 2.2rem;
+    /* Stylized heading like your logo */
+    h1.EHC {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #ff9900;
+      text-shadow: 
+        2px 2px 0 #000,
+        0 0 15px #ff9900,
+        0 0 25px #ff5500;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
     }
 
     h2 {
-      font-size: 1.5rem;
-      margin: 20px 0 10px;
+      font-size: 1.7rem;
+      color: #00ffc8;
+      text-shadow: 0 0 10px #00ffc8;
+      margin-bottom: 15px;
     }
 
     p {
@@ -71,14 +82,14 @@
       width: 100%;
       height: auto;
       border-radius: 10px;
+      border: 2px solid #00ffc8;
+      box-shadow: 0 0 12px #00ffc8;
     }
 
     ul {
       list-style: none;
       padding: 0;
       margin: 20px auto;
-      max-width: 800px;
-      font-family: 'Poppins', sans-serif;
     }
 
     li {
@@ -88,19 +99,14 @@
       border-left: 4px solid #00ffc8;
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      color: #fff;
-      transition: box-shadow 0.3s ease, background 0.3s ease;
       font-size: 1.1rem;
+      color: #fff;
+      transition: 0.3s;
     }
 
     li:hover {
-      box-shadow: 0 0 20px #00ffc8;
       background: rgba(0, 0, 0, 0.6);
-    }
-
-    li p {
-      margin: 0;
-      line-height: 1.6;
+      box-shadow: 0 0 20px #00ffc8;
     }
 
     strong {
@@ -126,7 +132,6 @@
       animation: fireGlow 3s ease infinite;
       box-shadow: 0 0 15px #ff4d00, 0 0 30px #ff6600;
       font-family: 'Poppins', sans-serif;
-      text-align: center;
       transition: transform 0.2s ease, box-shadow 0.3s ease;
     }
 
@@ -136,15 +141,9 @@
     }
 
     @keyframes fireGlow {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     footer {
@@ -155,23 +154,17 @@
       font-size: 14px;
       margin-top: 40px;
       border-top: 2px solid #8d6e63;
-      font-family: Arial, sans-serif;
       box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
     }
 
     @media (max-width: 600px) {
-      h1 {
-        font-size: 1.6rem;
+      h1.EHC {
+        font-size: 2rem;
+        letter-spacing: 2px;
       }
 
       h2 {
         font-size: 1.3rem;
-      }
-
-      .buy-btn {
-        width: 100%;
-        font-size: 1rem;
-        padding: 14px 30px;
       }
 
       li {
@@ -179,9 +172,14 @@
         font-size: 0.95rem;
       }
 
+      .buy-btn {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 1rem;
+      }
+
       footer {
         font-size: 12px;
-        padding: 10px;
       }
     }
   </style>
